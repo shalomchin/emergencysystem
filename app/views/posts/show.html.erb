@@ -1,0 +1,27 @@
+
+<p>
+  <strong>Headline:</strong>
+  <%= @post.title %>
+</p>
+ <p>
+   <strong>Date:</strong>
+  <%= @post.created_at %>
+</p>
+
+<p>
+  
+  <%= @post.text %>
+</p>
+<p>
+by <%= @post.author %>
+</p>
+
+<h2>Comments</h2>
+<%= render @post.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+
+<%= link_to 'Edit', edit_post_path( @post ) %>
+<%= link_to 'Back', posts_path, :class=> 'btn btn-success' %>
