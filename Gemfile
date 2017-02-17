@@ -56,4 +56,4 @@ gem 'nifty-generators'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'client_side_validations'
 gem "slim-rails"
-
+gem 'devise'
