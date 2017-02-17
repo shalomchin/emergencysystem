@@ -1,22 +1,33 @@
 class CommentsController < ApplicationController
   def new
-        @post = Post.find(params[:post_id])
-        @comment = @posts.comments.build 
-    end
+    @post = Post.find(params[:post_id])
+    @comment = @posts.comments.build 
+  end
 
   def edit
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
   end
 
-    def index
-        @post = Post.find(params[:post_id])
-        @comments = @post.comments.all
-    end
+  def update
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+ 
+  if @post.comments.update(comment_params)
+    redirect_to post_path(@post)
+  else
+    render 'edit'
+  end
+  end
 
-    def create
-        @post = Post.find(params[:post_id])
-        @comment = @post.comments.new(comment_params)
+  def index
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments.all
+  end
+
+  def create
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.new(comment_params)
         if @comment.save
             redirect_to post_path(@post)
         else
@@ -24,7 +35,7 @@ class CommentsController < ApplicationController
             redirect_to post_path(@post)
           
         end
-    end
+  end
 
         def destroy
           @post = Post.find(params[:post_id])
