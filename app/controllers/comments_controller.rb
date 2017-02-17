@@ -4,6 +4,11 @@ class CommentsController < ApplicationController
         @comment = @posts.comments.build 
     end
 
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+  end
+
     def index
         @post = Post.find(params[:post_id])
         @comments = @post.comments.all
@@ -22,7 +27,7 @@ class CommentsController < ApplicationController
     end
 
         def destroy
-        	@post = Post.find(params[:post_id])
+          @post = Post.find(params[:post_id])
           @comment = @post.comments.find(params[:id])
           
           @comment.destroy
