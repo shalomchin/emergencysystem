@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 end
 
   def post_params
-    params.require(:post).permit(:title, :date, :text, :author)
+    params.require(:post).permit(:title, :date, :text, :author, :category)
   end
 
   def destroy

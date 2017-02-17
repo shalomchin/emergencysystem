@@ -15,19 +15,27 @@
   <% end %>
  
     <div class="form-group">
-      <%= f.label :title, :class=> "control-label" %>
+      <%= f.label :Headline, :class=> "control-label" %>
       <%= f.text_field :title, :class=> 'form-control' %>
     </div>
   
 
     <p>
-    <%= f.label :date %><br>
-    <%= f.date_field :date, :class=> 'form-control' %>
+    <%= f.label :Categories_of_Information %><br>
+   
+
+  <%= f.select(:category, options_for_select([['Latest News', 'Latest News'], ['Resources', 'Resources'], ['Need Help', 'Need Help']])) %>
+ 
+    
+    
+   <!--  <%= f.text_field :category, :class=> 'form-control' %> -->
+    
   </p>
  
   <p>
-    <%= f.label :text %><br>
+    <%= f.label :Content %><br>
     <%= f.text_area :text, :class=> 'form-control', :rows => 5 %>
+
   </p>
 
    <p>

@@ -6,4 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Post.create(title: 'head is the test of the day', date: '', text: 'a lot of this is cfazya lot of this is cfazya lot of this is cfazya lot of this is cfazya lot of this is cfazya lot of this is cfazy', author: 'walls')
+Post.create(title: 'Secret Invasion', date: '27/08/14', category: "resources", text: 'a llot of this is cfazy', author: 'wallis')
+Post.create(title: 'I am stuck in the toilet' , date: '27/10/15', category: "Need helps", text: 'I wanna jump now', author: 'The Rock')
+Post.create(title: 'Mama san' ,date: '27/10/16', category: "Latest news", text: 'I am going to Hellllll', author: 'Dennis the Menace')
